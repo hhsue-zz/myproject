@@ -1,3 +1,4 @@
 #!/bin/bash
 # This hook is sourced after every virtualenv is activated.
 
+cd $VIRTUAL_ENV

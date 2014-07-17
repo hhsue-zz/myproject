@@ -1,6 +1,8 @@
 import json
 import urllib, urllib2
-from keys import BING_API_KEY
+import sys
+sys.path.append('/Users/hhsue') 
+import keys
 
 def run_query(search_terms):
 	# Specify the base
@@ -29,7 +31,7 @@ def run_query(search_terms):
 		
 	# Setup authentication with the Bing servers.
 	# The username MUST be a blank string, and put in your API key!
-	username = ''
+	username = 'hhsue'
     # Add your BING_API_KEY to a file called keys, which will not be commited to the repo
 	bing_api_key = BING_API_KEY
 	

@@ -3,36 +3,35 @@
 # Import the OS module and work out our project's paths
 import os
 SETTINGS_DIR = os.path.dirname(__file__)
-
 PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
 PROJECT_PATH = os.path.abspath(PROJECT_PATH)
-
 TEMPLATE_PATH = os.path.join(PROJECT_PATH, 'templates')
 STATIC_PATH = os.path.join(PROJECT_PATH, 'static')
-DATABASE_PATH = os.path.join(PROJECT_PATH, 'rango.db')
+#DATABASE_PATH = os.path.join(PROJECT_PATH, 'rango.db')
 
 # Printing paths for sanity's sake
 print "Settings directory:", SETTINGS_DIR
 print "Project root:", PROJECT_PATH
 print "Templates:", TEMPLATE_PATH
 print "Static:", STATIC_PATH
-print "DB:", DATABASE_PATH
+#print "DB:", DATABASE_PATH
 
 LOGIN_URL = '/rango/login/'
+#LOGIN_URL = '/rangoscratch/login/'
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    # ('hhsue', 'henryhsue@gmail.com'),
 )
 
 MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': DATABASE_PATH,
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'hhsue' ,
     }
 }
 
@@ -140,8 +139,10 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    'django.contrib.admindocs',
     'rango',
+    'rangoscratch',
+    'polls',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
